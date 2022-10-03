@@ -16,8 +16,6 @@ var special = "!@#$%^&*()"
 
 var generateBtn = document.querySelector("#generate");
 var password = document.getElementById("password")
-var chars = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
 
 
 // Write password to the #password input
@@ -34,81 +32,69 @@ function writePassword() {
 //1. return true or false based on the password minLength and maxLength 
 //2. a for loop to create a random password
 //3. generate a password from the given length and character set
-//4. check if te user wants lowercase, uppercase, and special characters
+//4. check if the user wants lowercase, uppercase, and special characters
 
 
 
 
 
-//function to generate the random password using a for loop
+//function to generate the random password using a while statement
 
 
 
-/* function generatePassword() {
+function generatePassword() {
 
+  var characterPool = ""
   var finalpwd = ""
 
-  var pwdlength = prompt("please enter 8 to 128 characters")
-  console.log(pwdlength)
-
-  if (length >= 8 && length <= 128) {
-    var isLowercase = confirm("include lowercase letters?")
-    console.log(isLowercase)
-
-    var isUppercase = confirm("include uppercase letters?")
-    console.log(isUppercase)
-
-    var isNumber = confirm("include numbers?")
-    console.log(isNumber)
-
-    var isSpecial = confirm("include special characters?")
-    console.log(isSpecial)
-
-    if (isLowercase === true) {
-      var positionString = Math.floor(Math.random() * 26)
-      console.log(positionString)
-      lowercase[positionString]
-      finalpwd = finalpwd + lowercase[positionString]
-
-    }
-    else {
-
-    }
-    if (isUppercase === true) {
-      var positionString = Math.floor(Math.random() * 26)
-      console.log(positionString)
-      finalpwd = finalpwd + uppercase[positionString]
-    }
-    else {
-
-    }
-    if (isNumber === true) {
-      var positionString = Math.floor(Math.random() * 10)
-      console.log(positionString)
-      finalpwd = finalpwd + number[positionString]
-    }
-    else {
-
-    }
-    if (isSpecial === true) {
-      var positionString = Math.floor(Math.random() * 10)
-      console.log(positionString)
-      finalpwd = finalpwd + special[positionString]
-    }
-    else {
-
-    }
+  var pwdlength = parseInt(prompt("please enter 8 to 128 characters"))
 
 
-  }
-  else {
+  if (pwdlength < 8 || pwdlength > 128) {
     alert("*password not within required  range*")
+    return ""
   }
+  var isLowercase = confirm("include lowercase letters?")
+  if (isLowercase) {
+    characterPool = characterPool + lowercase
+  }
+
+
+  var isUppercase = confirm("include uppercase letters?")
+  if (isUppercase) {
+    characterPool = characterPool + uppercase
+  }
+
+
+  var isNumber = confirm("include numbers?")
+  if (isNumber) {
+    characterPool = characterPool + number
+  }
+
+
+  var isSpecial = confirm("include special characters?")
+  if (isSpecial) {
+    characterPool = characterPool + special
+  }
+
+  if (!characterPool) {
+    alert("You must select at least one character type for the password")
+    return ""
+  }
+
+  while (finalpwd.length < pwdlength) {
+    var generator = Math.floor(Math.random() * characterPool.length)
+    finalpwd = finalpwd + characterPool[generator]
+  }
+
+
+
+
 
   return finalpwd
 
 
-} */
+}
 
 
 
