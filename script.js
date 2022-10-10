@@ -1,25 +1,23 @@
-// Assignment Code
+
 //Need to create variables  for:
-//1.the password character set 
-//2. the minimum and maxmimum length of the password
-//3. a var to fetch the password html element
-//4. a var to set the password as empty by default
-//5. define upper and lowercase characters
-//
+// -the lowercase character set
+// -the uppercase character set
+// -numbers & special characters
+// 
 
 var lowercase = "abcdefghijklmnopqrstuvwxyz"
 var uppercase = lowercase.toUpperCase()
 var number = "0123456789"
 var special = "!@#$%^&*()"
 
-
+// defining the button and where to render password
 
 var generateBtn = document.querySelector("#generate");
 var password = document.getElementById("password")
 
 
 // Write password to the #password input
-// 
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -87,16 +85,11 @@ function generatePassword() {
     finalpwd = finalpwd + characterPool[generator]
   }
 
-
-
-
-
   return finalpwd
-
 
 }
 
 
 
-// Add event listener to generate button
+// Allow the button to render the password on click
 generateBtn.addEventListener("click", writePassword); 
