@@ -30,8 +30,8 @@ function writePassword() {
 
 //Need functions to:
 //1. return true or false based on the password minLength and maxLength 
-//2. a for loop to create a random password
-//3. generate a password from the given length and character set
+//2. function to create a random password
+//3. generates a password from the given length and character pool 
 //4. check if the user wants lowercase, uppercase, and special characters
 
 
