@@ -12,6 +12,6 @@ If the user does not choose a valid length, or does not select a character type 
 
 ## Deployed Application
 
-link to the GitHub repository: 
+link to the GitHub repository: https://github.com/dejuliusvince/Challenge3_PasswordGenerator
 
-link to the deployed application: 
+link to the deployed application: https://dejuliusvince.github.io/Challenge3_PasswordGenerator/
